@@ -44,13 +44,18 @@ Each folder provides sample code to:
 - ✅ Environment variable usage
 - ✅ Easy-to-follow code structure
 
-📌 Notes
+## 📌 Notes
 This sample code is provided for educational and testing purposes.
 
 Do not use it directly in production without proper validation and security checks.
 
-📞 Support
-Need help? Reach out to our team at [Herepay Support](https://wa.me/601151404297) or refer to the [official documentation](https://herepay.readme.io).
+## 📞 Support
+Need help? Reach out to our team 
+- [💬 Herepay Support (WhatsApp)](https://wa.me/601151404297)
+- [📚 Herepay API Documentation](https://herepay.readme.io).
 
+## 🤝 Contributing
+We welcome community contributions! Feel free to fork the repository and submit a pull request.
+Note: All pull requests require admin approval before merging.
 
 
