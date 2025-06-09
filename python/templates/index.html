@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Herepay Integration Example</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <form class="max-w-md mx-auto p-6 bg-white rounded-2xl shadow-md space-y-4 mt-4" method="POST"
+        action="/submit-payment">
+        <h2 class="text-2xl font-bold text-gray-800">Example Herepay Integration</h2>
+
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" required value="John Doe"
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+    
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" required value="aliff.rosli96@gmail.com"
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label for="payment" class="block text-sm font-medium text-gray-700">Payment Code</label>
+            <input type="text" name="payment_code" required
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label for="created_at" class="block text-sm font-medium text-gray-700">Created At</label>
+            <input type="text" id="created_at" name="created_at" required
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+            <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
+            <input type="number" id="amount" name="amount" required value="2"
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+            <!-- phone -->
+            <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+            <input type="tel" id="phone" name="phone" required value="0123456789"
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div>
+            <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+            <input type="text" id="description" name="description" value="Payment Integration Example"
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- bank prefix -->
+        <div>
+            <label for="bank_prefix" class="block text-sm font-medium text-gray-700">Bank Prefix</label>
+            <input type="text" id="bank_prefix" name="bank_prefix" value="TEST0021" required
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <!-- payment method -->
+        <div>
+            <label for="payment_method" class="block text-sm font-medium text-gray-700">Payment Method</label>
+            <input type="text" id="payment_method" name="payment_method" value="Online Banking"
+                class="mt-1 w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <button type="submit"
+            class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
+            Submit
+        </button>
+    </form>
+    <script>
+        // created_at field should be in Malaysia time with format YYYY-MM-DD HH:MM:SS
+        const now = new Date();
+        const malaysiaOffset = 8 * 60; // Malaysia is UTC+8
+        const malaysiaTime = new Date(now.getTime() + malaysiaOffset * 60 * 1000);
+        document.getElementById('created_at').value = malaysiaTime.toISOString().slice(0, 19).replace('T', ' ');
+
+        // payment code should be a random 6-digit number with alphabet prefix
+        function generatePaymentCode() {
+            const prefix = 'PAY';
+            const randomNumber = Math.floor(100000 + Math.random() * 900000);
+            return `${prefix}${randomNumber}`;
+        }
+        document.querySelector('input[name="payment_code"]').value = generatePaymentCode();
+    </script>
+</body>
+
+</html> 
