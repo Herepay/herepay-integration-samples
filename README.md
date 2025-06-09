@@ -4,9 +4,9 @@ This repository contains **sample code** for integrating the [Herepay Payment Ga
 
 ## 📁 Repository Structure
 ```bash
-hp-example-source-code-integration/
-├── hp-nodejs   # Sample integration using Node.js
-├── hp-php      # Sample integration using PHP
+herepay-integration-samples/
+├── nodejs   # Sample integration using Node.js
+├── php      # Sample integration using PHP
 ├── README.md   
 ```
 
@@ -25,13 +25,13 @@ Each folder provides sample code to:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/hp-example-source-code-integration.git
-   cd hp-example-source-code-integration
+   git clone https://github.com/Herepay/herepay-integration-samples
+   cd herepay-integration-samples
    ```
 2. **Choose your preferred integration language**:
 
-  - ```hp-nodejs``` – for Node.js implementation
-  - ```hp-php``` – for PHP implementation
+  - ```nodejs``` – for Node.js implementation
+  - ```php``` – for PHP implementation
 
 3. **Follow the setup instructions in the respective folder to run and test the integration**.
 
